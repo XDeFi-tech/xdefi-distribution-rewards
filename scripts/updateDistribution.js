@@ -2,6 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   await hre.run("compile");
+  console.log("updateDistribution");
 
   const DESTINATION = "0x1dfd9029d89f87c8c63ed8ef2be1b5393b2348ef"; // XDEFI Badgies
   const XDistrib = await hre.ethers.getContractAt(
@@ -9,7 +10,7 @@ async function main() {
     DESTINATION
   );
   const tx = await XDistrib.updateDistribution();
-
+  console.log(tx);
   await tx.wait();
 
   console.log("end");

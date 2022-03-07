@@ -7,7 +7,7 @@ const hre = require("hardhat");
 
 async function main() {
   await hre.run("compile");
-
+  console.log("sendRewards");
   const REWARDER_ADDRESS = `${process.env.REWARDER_ADDRESS}`;
   const AMOUNT = 100;
   const XDEFI_ADDRESS = "0x72b886d09c117654ab7da13a14d603001de0b777"; // Token address
@@ -15,7 +15,7 @@ async function main() {
   const Rewarder = await hre.ethers.getContractFactory("Rewarder");
   const rewarder = Rewarder.attach(REWARDER_ADDRESS);
   const tx = await rewarder.transferToken(XDEFI_ADDRESS, AMOUNT, DESTINATION);
-
+  console.log(tx);
   await tx.wait();
 }
 
