@@ -1,6 +1,12 @@
-# Basic Sample Hardhat Project
+# XDEFI Distribution Rewards Automator
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This Rewarder contract is basically a thin role based access control to allow some third parties to send $XDEFI (rewards) periodically; without allowing them to send to **any** destinations;
+
+This will allow three different actors to manage funds that gets rewarded to stakers.
+
+- Admins: can set authorized senders, can set authorized destinations - they will in general send $XDEFI Funds to this contract
+- Senders: are the ones who can send money of this contract to the `authorizedDestinations` list
+- Authorized Destinations: are the ones who can receive and be specified as `destination` when sending ERC20 tokens
 
 Try running some of the following tasks:
 
