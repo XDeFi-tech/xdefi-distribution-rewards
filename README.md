@@ -19,3 +19,12 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+
+### Run sendRewards
+
+```
+export PKEY=0x.... # change with private key
+export REWARDER_ADDRESS=0x... #change with deployed rewarder address
+npx hardhat run scripts/sendRewards.js --network mainnetSender
+```

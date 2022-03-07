@@ -8,7 +8,7 @@ const hre = require("hardhat");
 async function main() {
   await hre.run("compile");
 
-  const REWARDER_ADDRESS = ""; // TODO
+  const REWARDER_ADDRESS = `${process.env.REWARDER_ADDRESS}`;
   const AMOUNT = 100;
   const XDEFI_ADDRESS = "0x72b886d09c117654ab7da13a14d603001de0b777"; // Token address
   const DESTINATION = "0x1dfd9029d89f87c8c63ed8ef2be1b5393b2348ef"; // XDEFI Badgies
