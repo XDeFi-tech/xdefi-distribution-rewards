@@ -14,9 +14,9 @@ async function main() {
   const DESTINATION = "0x1dfd9029d89f87c8c63ed8ef2be1b5393b2348ef"; // XDEFI Badgies
   const Rewarder = await hre.ethers.getContractFactory("Rewarder");
   const rewarder = Rewarder.attach(REWARDER_ADDRESS);
-  const tx = rewarder.transferToken(XDEFI_ADDRESS, AMOUNT, DESTINATION);
+  const tx = await rewarder.transferToken(XDEFI_ADDRESS, AMOUNT, DESTINATION);
 
-  await tx.mined();
+  await tx.wait();
 }
 
 // We recommend this pattern to be able to use async/await everywhere
